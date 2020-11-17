@@ -74,6 +74,7 @@ class HttpHandler extends SimpleChannelInboundHandler<HttpObject>
             response.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/plain");
             response.headers().set(HttpHeaderNames.CONTENT_LENGTH, content.readableBytes());
             response.headers().set(HttpHeaderNames.CONTENT_ENCODING,"utf-8");
+
             ctx.writeAndFlush(response);
 
         }
